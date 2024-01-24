@@ -11,6 +11,7 @@
   <body>
     <header>
       <h1 id='projectTitle'></h1>
+      <h2 id='issueCounter'></h2>
     </header>
     <center>
       <div id='submitNewIssue'>
@@ -36,7 +37,7 @@
             crossorigin="anonymous"></script>
     <script>
       $(function() {
-        let currentProject = window.location.pathname.replace(/\//g, "");;
+        let currentProject = window.location.pathname.replace(/\//g, "");
         let url = "/api/issues/"+currentProject;
         $('#projectTitle').text('All issues for: '+currentProject)
         $.ajax({
@@ -86,7 +87,7 @@
             type: "PUT",
             url: url,
             data: {_id: $(this).attr('id'), open: false},
-            success: function(data) { alert(data); window.location.reload(true); }
+            success: function(data) { alert('issue ' + data._id +' closed!'); window.location.reload(true); }
           });
           e.preventDefault();
         });
@@ -96,11 +97,23 @@
             type: "DELETE",
             url: url,
             data: {_id: $(this).attr('id')},
-            success: function(data) { alert(data); window.location.reload(true); }
+            success: function(data) { alert('issue ' + data._id + ' deleted!'); window.location.reload(true); }
           });
           e.preventDefault();
         });
+        $.ajax({
+          url: '/api/issues/' + currentProject,
+          type: 'GET',
+          success: function(data) {
+            $('#issueCounter').text(data.length + (data.length === 1 ? ' issue' : ' issues'));
+          }
+        });
       });
+
+      function issueCounter(currentProject) {
+        
+          //e.preventDefault();
+      }
    </script>
   </body>
 </html>

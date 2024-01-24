@@ -1,23 +1,46 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
   padding: 10px;
+  color: #e5e1db;
+  background-color: #1a1e24;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings:
+    "cv11", "salt", "ss01", "ss03",
+    "cv01", "cv02", "cv03", "cv04",
+    "cv05", "cv06", "cv09", "cv10";
 }
 
 .issue {
   margin: 20px;
   padding: 5px;
   width: 60%;
-  border: 2px solid black;
+  border: 2px solid #16181c;
 }
 
 .closed {
-  background-color: lightgrey;
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .id {
   font-size: 10.5px;
+}
+
+a {
+  text-decoration: none;
+  color: #7bd3f7;
+}
+
+hr {
+  color: #16181c;
+  background-color: #16181c;
+  height: 2px;
+  border-width: 0;
 }
