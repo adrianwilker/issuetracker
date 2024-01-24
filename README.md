@@ -4,13 +4,13 @@
 
 <p>In the development of this project I acquired or perfected some knowledge, such as Chai and Mocha, Chai-HTTP, APIs, Node.js and Passport, Express.js, unit and functional testing.</p>
 
-<p>Deploy: <a href="#" rel="nofollow" target="_blank">#</a></p>
+<p>Deploy: <a href="https://issuetracker-jtuq.onrender.com/" rel="nofollow" target="_blank">issuetracker-jtuq.onrender.com</a></p>
 
 <p>On replit: <a href="https://replit.com/@adrianwilker/issuetracker" target="_blank">replit.com/@adrianwilker/issuetracker</a></p>
 
 <hr>
 
-<p>Functional test</code>:</p>
+<p>Functional tests:</p>
 <ul>
   <li>Create an issue with every field: POST request to <code>/api/issues/{project}</code></li>
   <li>Create an issue with only required fields: POST request to <code>/api/issues/{project}</code></li>
